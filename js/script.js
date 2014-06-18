@@ -1,16 +1,17 @@
 		
 //輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
 
-window.fbAsyncInit = function() {
-	FB.init({
-		appId      : ' 339441626211533 ',
-		xfbml      : true,
-		version    : 'v2.0'
-		});
+
+window.fbAsyncInit = function () {
+          FB.init({
+          appId      : '339441626211533',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      
 
 
-
-		FB.getLoginStatus(function (response) {
+FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
 
                     var uid = response.authResponse.userID;
@@ -47,16 +48,17 @@ window.fbAsyncInit = function() {
 //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
 	
 	//起始畫面
-	var ctx = document.getElementById('canvas').getContext('2d'); //宣告變數找到頁面的canvas標籤的2d內容
-	ctx.font='20px "Arial"'; //設定字體與大小
+
+
+	var ctx = document.getElementById('canvas').getContext('2d');//宣告變數找到頁面的canvas標籤的2d內容
+	ctx.font='20px "Arial"';//設定字體與大小
 	ctx.fillText("Click here to start fill with Facebook Profile Picture", 40, 270); //設定預設的開始畫面
-		var img = new Image(); // 新增圖像1
-		img.src = "http://www.dianmeng.com/moban/tupian/200807/2008070204015400.jpg"; //圖像路徑（路徑自己設，且自己加入想要的圖層）
+    var img = new Image(); // 新增圖像1
+    img.src = "img/img_1.jpg"; //圖像路徑（路徑自己設，且自己加入想要的圖層）
 	var img2 = new Image(); //新增圖像2
-	img2.src = "http://file-sucai.sioe.cn/201101/22/2135366609.gif" //圖像路徑
+	img2.src = "img/img_2.jpg" //圖像路徑
 	var img3 = new Image();//新增圖像3
-	img3.src = "http://file-sucai.sioe.cn/a/201206/7/174599753.jpg"//圖像路徑
-	
+	img3.src = "img/img_3.jpg"//圖像路徑
 	
 
 	//宣告基本變數
@@ -125,7 +127,7 @@ window.fbAsyncInit = function() {
 
 
 
-
+};
 
 
 	 
@@ -203,3 +205,4 @@ function dataURItoBlob(dataURI) {
 				type: 'image/png'
 		});
 }
+
